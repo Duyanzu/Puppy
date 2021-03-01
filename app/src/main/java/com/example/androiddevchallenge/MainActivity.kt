@@ -1,61 +1,83 @@
-/*
- * Copyright 2021 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.androiddevchallenge
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.layout
+import androidx.compose.ui.unit.IntOffset
+import com.example.androiddevchallenge.ui.PetDetail
+import com.example.androiddevchallenge.ui.PetList
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
+
+    val viewModel: PetViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                MyApp(viewModel)
+                val openOffset by animateFloatAsState(
+                    if (viewModel.openModule == null) {
+                        1f
+                    } else {
+                        0f
+                    }
+                )
+                if (viewModel.currentPet != null) {
+                    PetDetail(
+                        Modifier.percentOffsetX(openOffset),
+                        pet = viewModel.currentPet,
+                        viewModel = viewModel
+                    ) {
+                    }
+                }
             }
         }
+    }
+
+    override fun onBackPressed() {
+        if (viewModel.openModule != null) {
+            viewModel.closePetDetail()
+        } else {
+            super.onBackPressed()
+        }
+    }
+}
+
+fun Modifier.percentOffsetX(percent: Float) = this.layout { measurable, constraints ->
+    val placeable = measurable.measure(constraints)
+    layout(placeable.width, placeable.height) {
+        placeable.placeRelative(IntOffset((placeable.width * percent).roundToInt(), 0))
     }
 }
 
 // Start building your app here!
 @Composable
-fun MyApp() {
+fun MyApp(viewModel: PetViewModel) {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        PetList(viewModel)
     }
 }
 
-@Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
-fun LightPreview() {
+fun LightPreview(viewModel: PetViewModel) {
     MyTheme {
-        MyApp()
+        MyApp(viewModel)
     }
 }
 
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
-fun DarkPreview() {
+fun DarkPreview(viewModel: PetViewModel) {
     MyTheme(darkTheme = true) {
-        MyApp()
+        MyApp(viewModel)
     }
 }
