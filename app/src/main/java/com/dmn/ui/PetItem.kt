@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.ui
+package com.dmn.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,8 +19,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.androiddevchallenge.PetViewModel
-import com.example.androiddevchallenge.data.Pet
+import com.dmn.PetViewModel
+import com.dmn.data.Pet
 
 @Composable
 fun PetItem(modifier: Modifier = Modifier, pet: Pet, viewModel: PetViewModel) {

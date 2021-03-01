@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge
+package com.dmn
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -12,9 +12,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.IntOffset
-import com.example.androiddevchallenge.ui.PetDetail
-import com.example.androiddevchallenge.ui.PetList
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.dmn.ui.PetDetail
+import com.dmn.ui.PetList
+import com.dmn.ui.theme.MyTheme
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.data
+package com.dmn.data
 
 import androidx.annotation.DrawableRes
 

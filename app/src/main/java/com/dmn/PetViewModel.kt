@@ -1,11 +1,12 @@
-package com.example.androiddevchallenge
+package com.dmn
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.androiddevchallenge.data.Module
-import com.example.androiddevchallenge.data.Pet
+import com.example.androiddevchallenge.R
+import com.dmn.data.Module
+import com.dmn.data.Pet
 
 class PetViewModel : ViewModel() {
     var pets by mutableStateOf(

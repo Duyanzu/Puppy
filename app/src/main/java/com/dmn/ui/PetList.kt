@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.ui
+package com.dmn.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,8 +12,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.androiddevchallenge.PetViewModel
-import com.example.androiddevchallenge.data.Pet
+import com.dmn.PetViewModel
+import com.dmn.data.Pet
 
 @Composable
 fun PetList(viewModel: PetViewModel) {

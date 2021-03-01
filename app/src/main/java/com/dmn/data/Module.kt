@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.data
+package com.dmn.data
 
 enum class Module {
     PetDetail, PetList
