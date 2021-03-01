@@ -1,7 +1,7 @@
 # PuppyFinder
 
 https://github.com/Duyanzu/Puppy
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/Duyanzu/Puppy/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
