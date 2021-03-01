@@ -4,9 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.androiddevchallenge.R
 import com.dmn.data.Module
 import com.dmn.data.Pet
+import com.example.androiddevchallenge.R
 
 class PetViewModel : ViewModel() {
     var pets by mutableStateOf(
