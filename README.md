@@ -6,12 +6,12 @@ https://github.com/Duyanzu/Puppy
 
 ## :scroll: Description
 this is puppy finder app,for the #AndroidDevChallenage of Jetpack compose.
-    list some puppy
-    show puppy detail
+  ###  list some puppy
+  ###  show puppy detail
 
 
 ## :bulb: Motivation and Context
-    There are jump animations between pages
+  ###  There are jump animations between pages
 
 
 ## :camera_flash: Screenshots
