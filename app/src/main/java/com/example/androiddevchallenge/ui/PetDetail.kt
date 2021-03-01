@@ -58,7 +58,7 @@ fun PetDetail(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(start = 15.dp)
-                        .align(Alignment.CenterHorizontally)
+                        .align(Alignment.CenterHorizontally),
                 ) {
                     Text(text = "Name:${pet.name}", fontWeight = FontWeight.Bold)
                     Text(

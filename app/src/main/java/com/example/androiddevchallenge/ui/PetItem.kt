@@ -48,7 +48,7 @@ fun PetItem(modifier: Modifier = Modifier, pet: Pet, viewModel: PetViewModel) {
         Column(
             modifier = Modifier
                 .padding(start = 8.dp)
-                .align(Alignment.CenterVertically)
+                .align(Alignment.CenterVertically),
         ) {
             Text(text = "Name:${pet.name}", fontWeight = FontWeight.Bold)
             Text(text = "Varieties:${pet.varieties}", style = MaterialTheme.typography.body2)
